@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpaceShipControl : MonoBehaviour
 {
 
-    private float speed = 10.0f;
-    private float forwardInput;
+    //private float speed = 10.0f;
+    //private float forwardInput;
 
     // Start is called before the first frame update
     void Start()
