@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PathogensControl : MonoBehaviour
 {
 
     public GameObject obstacle;
+    public GameObject explosion;
     private int count = 0;
     // Start is called before the first frame update
     void Start()
@@ -26,4 +25,12 @@ public class PathogensControl : MonoBehaviour
         }
         count++;
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
+        Destroy(obstacle);
+        Destroy(expl, 3);
+    }
+
 }

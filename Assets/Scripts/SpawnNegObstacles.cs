@@ -28,13 +28,17 @@ public class SpawnNegObstacles : MonoBehaviour
     void Spawn()
     {
         float randomY = Random.Range(minY, maxY);
-        if (count % 2 == 0)
+        if (count % 10 == 0)
         {
-            obstacle.transform.localScale = new Vector3(1, 1, 1f);
+            if (count / 10 % 2 == 0)
+            {
+                obstacle.transform.localScale = new Vector3(1, 1, 1f);
+            }
+            else{
+                obstacle.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
+            }
         }
-        else {
-            obstacle.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
-        }
+        
         count++;
         Instantiate(obstacle, transform.position + new Vector3(12f, randomY, 0), transform.rotation);
     }
