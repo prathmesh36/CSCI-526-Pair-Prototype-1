@@ -6,15 +6,15 @@ public class SpaceShipControl : MonoBehaviour
     //private float speed = 10.0f;
     //private float horizontalInput;
 
-    public GameObject boundary;
-
     // Player movement speed
-    public float moveSpeed = 5f;
+    //public float moveSpeed = 5f;
+    public GameObject flame;
 
 
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -34,8 +34,9 @@ public class SpaceShipControl : MonoBehaviour
             Vector3 position = this.transform.position;
             position.y--;
             this.transform.position = position;
+            
         }
-
+        flame.transform.position = this.transform.position + new Vector3(-2.5f, -0.5f, -1f);
 
 
     }

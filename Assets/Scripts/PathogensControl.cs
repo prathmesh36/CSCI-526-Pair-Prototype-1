@@ -28,9 +28,12 @@ public class PathogensControl : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
-        Destroy(obstacle);
-        Destroy(expl, 3);
+        if (collision.gameObject.name.Equals("Cruiser 1"))
+        {
+            GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
+            Destroy(obstacle);
+            Destroy(expl, 3);
+        }
     }
 
 }
