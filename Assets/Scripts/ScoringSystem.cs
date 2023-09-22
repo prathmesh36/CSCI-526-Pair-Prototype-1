@@ -35,6 +35,12 @@ public class ScoringSystem : MonoBehaviour
                 flag = false;
             }
         }
+
+        if(Score < 50)
+        {
+            ScoreText.text = "You Lost!";
+            Time.timeScale = 0f;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
